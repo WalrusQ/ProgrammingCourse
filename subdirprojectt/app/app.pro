@@ -10,7 +10,8 @@ SOURCES += \
     ui_translation.c \
     ui_matrix.c \
     main.c \
-    ui_checking_slizzing.c
+    ui_checking_slizzing.c \
+    ui_check_string.c
 
 HEADERS += \
     ui.h \
@@ -18,7 +19,8 @@ HEADERS += \
     ui_tell_me_age.h \
     ui_translation.h \
     ui_matrix.h \
-    ui_check_slizzing.h
+    ui_check_slizzing.h \
+    ui_check_string.h
 
 win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../lib/release/ -llib
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../lib/debug/ -llib

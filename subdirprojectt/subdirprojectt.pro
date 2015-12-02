@@ -6,6 +6,8 @@ test.depends = lib
 SUBDIRS += \
     app \
     lib \
-    test
+    test \
+    cppapp \
+    cpplib
 
 

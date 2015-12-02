@@ -15,14 +15,16 @@ SOURCES += \
     matrix.c \
     tell_me_age.c \
     translation.c \
-    check_sizzling.c
+    check_sizzling.c \
+    check_string.c
 
 HEADERS += \
     conversation.h \
     matrix.h \
     tell_me_age.h \
     translation.h \
-    check_slizzing.h
+    check_slizzing.h \
+    check_string.h
 unix {
     target.path = /usr/lib
     INSTALLS += target
