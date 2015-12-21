@@ -8,6 +8,7 @@ SUBDIRS += \
     lib \
     test \
     cppapp \
-    cpplib
+    cpp-lib
+
 
 

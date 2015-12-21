@@ -28,6 +28,6 @@ void ui_main(){
         break;
     case 5:
         ui_check_string();
-        break;
+
     }
 }
