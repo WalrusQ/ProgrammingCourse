@@ -1,16 +1,19 @@
-#include "ui_check_string.h"
-#include "check_string.h"
+//#include "ui_check_string.h"
+//include "check_string.h"
+//#include <string.h>
 
-void ui_check_string(){
-    printf("Input text");
-    char string[256] = "Abrakadabra";
-    char sentence[256];
-    char word[256];
-    printf("%s \n" , string);
+//void ui_check_string(){
+//    printf("Input text");
+//    int a = 10;
+//    char* string = (char*) malloc(a);
+//    char* sentence = (char*) malloc(a);
+//    char* word = (char*) malloc(a);
+//    printf("do\n");
 
-
-  check_string(string, sentence, word);
-
-
-printf("Ola");
-}
+//gets(string);
+//check_string(string, sentence, word);
+//printf("posle");
+//free(string);
+//free(sentence);
+//free(word);
+//}
