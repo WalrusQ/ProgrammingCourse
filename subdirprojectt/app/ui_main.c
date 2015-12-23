@@ -27,7 +27,7 @@ void ui_main(){
         ui_matrix();
         break;
     case 5:
-        ui_check_string();
+       ui_check_slizzing();
 
     }
 }

@@ -4,7 +4,7 @@
 #include"ui_matrix.h"
 #include"ui_tell_me_age.h"
 #include"ui_translation.h"
-#include"ui_check_string.h"
+#include"ui_check_slizzing.h"
 void ui_main();
 
 

@@ -1,6 +1,8 @@
 #ifndef RATIONALNUM_H
 #define RATIONALNUM_H
-
+#include <iostream>
+#include <exception>
+using namespace std;
 
 class RationalNum
 {
@@ -14,6 +16,11 @@ public:
     void divide(int);
     double ToDouble();
 private:
+
+};
+class DevNull:public exception{
+public:
+
 
 };
 
