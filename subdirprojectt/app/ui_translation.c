@@ -2,7 +2,8 @@
 #include "translation.h"
 
 void ui_translation()
-{   Angle angle;
+{
+    Angle angle;
     double radian;
     printf("Input the angle in radians:\n");
     scanf("%lf", &radian);

@@ -1,3 +1,4 @@
+/// неиспользуемый код
 //#include "ui_check_string.h"
 //include "check_string.h"
 //#include <string.h>

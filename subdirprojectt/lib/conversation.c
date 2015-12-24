@@ -2,8 +2,10 @@
 
 
 
+/// Переназвать
 int conversation(int input_num){
 
+    /// Output_num -- все прочие переменные у вас названы с маленькой буквы
     int Output_num = 0, tmp, amount_of_numerals;
     tmp = input_num;
 

@@ -2,9 +2,11 @@
 
 massive_without_nulls::massive_without_nulls()
 {
+    /// magic number
     array = new int[20];
 }
 
+/// Переименовать
 void massive_without_nulls::converting_matrix()
 {
     int k, i;
@@ -27,11 +29,11 @@ void massive_without_nulls::converting_matrix()
             break;
         }
 
-new_array = new int[k];
+    new_array = new int[k];
     for (i=0; i<k; i++)
 
         new_array[i] = array[i];
-delete [] new_array;
+    delete [] new_array;
 
 }
 

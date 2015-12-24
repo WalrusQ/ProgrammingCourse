@@ -35,6 +35,8 @@ void IlinTest::test_translation()
     QCOMPARE(angle.sec, 44);
 
 }
+
+/// удалить
 //void IlinTest::test_tell_me_age()
 //{
 

@@ -1,7 +1,8 @@
 #ifndef MATRIX_WITHOUT_NULLS_H
 #define MATRIX_WITHOUT_NULLS_H
 
-
+/// Переделать в класс массива с внятным конструктором и деструктором и конструктором копирования и оператором индексации
+/// и методом "убреру-ка-я-свои-нули"
 class massive_without_nulls
 {
 private:

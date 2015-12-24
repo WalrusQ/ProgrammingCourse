@@ -5,6 +5,7 @@
 class conversation
 {
 private:
+    /// поля не нужны
     int input_num;
     int output_num;
 public:

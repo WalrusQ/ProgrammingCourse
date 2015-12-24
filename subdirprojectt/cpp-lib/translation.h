@@ -13,6 +13,7 @@ private:
 public:
     Translation(double rad = 0.5);
     void convert();
+    /// Где методы доступа к полям
 };
 
 #endif // TRANSLATION_H

@@ -1,3 +1,4 @@
+/// Неиспользуемый код надо удалить
 //void check_string(char* string, char* sentence, char* word){
 
 //    int i, k;

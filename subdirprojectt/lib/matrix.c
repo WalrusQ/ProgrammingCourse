@@ -1,6 +1,8 @@
 #include"matrix.h"
 
 
+/// нет тут речи про матрицу
+/// magic number 20 надо вынести, например, в мактос
 int matrix_not_zero(int* array){
     int k, i;
        for (i=0; i<20; i++){
@@ -16,6 +18,7 @@ int matrix_not_zero(int* array){
             else break;
         }
     }
+       /// Зачем это
     printf("\n");
     for (i = 0; i < 20;i++){
 

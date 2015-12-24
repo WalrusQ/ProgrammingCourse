@@ -9,8 +9,10 @@ class RationalNum
     int numerator;
     int denominator;
 public:
+    /// Параметры переименовать
     RationalNum(int num1 = 1, int num2 = 8);
     void Copy(RationalNum);
+    /// Перегрузить операторы
     void sum(int);
     void Multi(int);
     void divide(int);

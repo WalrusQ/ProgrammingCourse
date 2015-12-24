@@ -9,6 +9,7 @@ private:
 public:
     tell_me_age(int input = 12);
     int checking_age();
+    /// Переделать в оператор <<
     void output();
 };
 

@@ -5,11 +5,13 @@ using std::string;
 
 class check_sizzling
 {
-private:
-    string text;
+
 public:
-    check_sizzling(string sometext = "restart nimfa vyrer");
-    string find_symbol();
+    check_sizzling();
+    /// может быть они private?
+    /// где const?
+    /// переименовать
+    string find_symbol(const string);
     int check_symbol(char);
 
 };

@@ -13,6 +13,7 @@ void ui_matrix(){
 
     int k = matrix_not_zero(array);
 
+    /// снова большая буква
     FILE *Output = fopen("Output.txt", "w");
     int* new_array = (int*) malloc(sizeof(int)*20);
     for (i=0; i<k; i++){

@@ -1,7 +1,7 @@
 #include "rationalnum.h"
 
 
-RationalNum::RationalNum(int num1, int num2)
+RationalNum::RationalNum(int num1, int num2)/// Список инициализации
 {
     numerator = num1;
     denominator = num2;

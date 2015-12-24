@@ -1,6 +1,7 @@
 
 #include"check_slizzing.h"
 
+/// Массивчик char для замен
 void check_slizzing(char* string){
     int i;
     for(i=0; i<200; i++)

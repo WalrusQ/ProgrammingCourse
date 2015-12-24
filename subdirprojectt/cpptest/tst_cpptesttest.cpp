@@ -20,7 +20,8 @@ private Q_SLOTS:
 };
 
 
-
+/// Тест на каждый паблик метод
+/// Переименовать
 void CpptestTest::test_inapsulation(){
     RationalNum Num;
     RationalNum Numb;
