@@ -10,8 +10,8 @@ SOURCES += \
     ui_translation.c \
     ui_matrix.c \
     main.c \
-    ui_checking_slizzing.c \
-    ui_check_string.c
+    ui_check_string.c \
+    ui_checking_sizzling.c
 
 HEADERS += \
     ui.h \

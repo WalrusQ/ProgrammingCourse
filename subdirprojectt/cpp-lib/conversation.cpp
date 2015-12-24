@@ -6,7 +6,7 @@ conversation::conversation(int num)
 }
 
 int conversation::convert()
-{
+{   output_num = 0;
     int tmp, amount_of_numerals;
     tmp = input_num;
 

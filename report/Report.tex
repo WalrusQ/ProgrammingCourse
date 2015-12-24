@@ -231,16 +231,28 @@ literate={Ö}{{\"O}}1
 		Информационные сообщения:	0
 		
 		\vspace{\baselineskip}
-		При автоматическом тестировании вызывалась функция, затем полученные значения сравнивались с ожидаемыми значениями. Результаты тестирования представлены ниже:  
+		При автоматическом тестировании вызывалась функция, затем полученные значения сравнивались с ожидаемыми значениями. Результаты тестирования представлены в таблице:  
 		
 		\vspace{\baselineskip}
 	 
-Тестируемое значение: 
-	radians = 0.5
-Ожидаемые значения: 
-	degree = 28
-	min = 39
-	sec = 44
+
+ \begin{tabular}{|c|c|c|c|c|}
+	\hline 	
+	Входные & \multicolumn{2}{|c|}{Ожидаемый результат} & \multicolumn{2}{|c|}{Полученнный результат} \\
+	\cline{2-5}
+	данные & Возвращаемое & Корни & Возвращаемое & Корни \\
+	 & значение & & значение & \\
+	\hline
+	3 5 10 & 0 & & 0 & \\
+	\hline
+	23 11 1 & 1 & -0.35620 -0.12206 & 1 & -0.35620 -0.12206\\
+	\hline
+	10 0 2 & 0 & & 0 & \\
+	\hline
+	23 11 1 & 1 & -1.16031 1 & 0 & -1.16031 0 \\
+	\hline
+
+ \end{tabular}
  
 \subsection{Выводы}
 
@@ -275,7 +287,7 @@ quadEquationUI.c
 
 \begin{itemize}
 
-	\item int tell\_ me\_ age(int)
+\item int tell-me-age(int)
 
 	Функция проверяет число на несколько условий и возвращает один из идентефикаторов. Перечилсяемый тип был использован для систематизации вывода информации.
 	
@@ -292,7 +304,7 @@ quadEquationUI.c
 		Для статического анализа использовалась утилита Cppcheck.
 		
 		\vspace{\baselineskip}
-		Результат проверки 
+		Результат проверки идфидф
 		
 		Статистика:
 		
@@ -308,18 +320,46 @@ quadEquationUI.c
 		
 		Информационные сообщения:	0
 		
+		
+		
+В ходе автоматического тестирования функции conversation подавалось число, содержащее четные цифры и проверялось с устно подсчетанным результатом.
+
+	\vspace{\baselineskip}
+
+ \begin{tabular}{|r l|c|c|}
+ 	\hline 	
+ 	\multicolumn{2}{|c|}{Входные данные} & Результат & Ожидаемый  результат \\
+ 	\hline
+ 	11 & 0   &   12  &	12	\\       
+ 	21 & 10	&	2	&	2	\\
+ 	19 & 9	&	5	&	5	\\
+ 	35 & 25	&	0	&	0	\\
+ 	\hline
+ 	12 & 0   &   1  &	1	\\       
+	31 & 9	&	10	&	10	\\
+ 	21 & 12	&	10	&	10	\\
+ 	43 & 48	&	31	&	31	\\
+ 	\hline
+ 	2 & 0   &   3  &	3	\\       
+ 	7 & 40	&	19	&	19	\\
+ 	22 & 0	&	22	&	22	\\
+ 	26 & 23	&	49	&	49	\\
+ 	\hline
+ 	
+ \end{tabular}
+
 \subsection{Выводы}
 
 При выполнении задания я получил опыт в организации функций одной программы.
 
 \subsection*{Листинги}
-tell\_ me\_ age.c
+tell\_ me-age.c
 \lstinputlisting[]
 {../subdirprojectt/lib/tell_me_age.c}
 
 \vspace{\baselineskip}
 
-ui\_ tell\_ me\_ age.c
+ui-tell-me-age.c
 \lstinputlisting[]
 {../subdirprojectt/app/ui_tell_me_age.c}
 
@@ -397,13 +437,22 @@ ui\_ tell\_ me\_ age.c
 
 	\vspace{\baselineskip}
 	
-	В ходе автоматического тестирования  вызывалась функция translation, которой подавались различные числа для факторизации. Затем полученные данные сравнивались с ожидаемым результатом. 
+	В ходе автоматического тестирования несоклько раз вызывалась функция factorization, которой подавались различные числа для факторизации. Затем полученные данные сравнивались с ожидаемым результатом. 
 	 
 	 \vspace{\baselineskip}
- Тестируемое значение: 
-	12234
-Ожидаемое значения: 
-	12222344
+ 
+ \begin{tabular}{|c|c|c|}
+ 	\hline 	
+ 	Входные данные & Результат & Ожидаемый  результат \\
+ 	\hline
+	75 & 3 5 5 & 3 5 5 \\
+	\hline
+	13 & 13 & 13 \\
+	\hline
+	34527 & 3 17 677 & 3 17 677\\
+ 	\hline
+ 	
+ \end{tabular}
 
 \subsection{Выводы}
 В ходе выполнения я отработал навыки работы с циклами.
@@ -414,7 +463,7 @@ conversation.c
 
 \vspace{\baselineskip}
 
-ui\_ conversation.c
+ui-conversation.c
 \lstinputlisting[]
 {../subdirprojectt/app/ui_conversation.c}
 
@@ -436,7 +485,7 @@ ui\_ conversation.c
 
 \begin{itemize}
  	
- 	\item int matrix\_ not\_ zero(int*)
+ 	\item int matrix-not-zero(int*)
  	Функция получает массив целых чисел, считанный из файла. Затем по циклу ищет нули и удаляет их с массива, затем возвращает индекс последнего элемента массива для последующего вывода.
  	
 \end{itemize}
@@ -478,8 +527,7 @@ matrix.c
 
 \vspace{\baselineskip}
 
-ui\_ 
-matrix.c
+ui-matrix.c
 \lstinputlisting[]
 {../subdirprojectt/app/ui_matrix.c}
 
@@ -497,12 +545,11 @@ matrix.c
 \subsection{Проектирование}
 
 В ходе проектирования были выделены следующие функции:
-
 \begin{itemize}
-	 \item void check\_ slizzing(char*)
+	 \item void check-slizzing(char*)
  	В этой функции выполняется поиск шипящей согласной и перенаправление на проверку последующей буквы, и при необходимости изменяет ее.
  	
- 	\item int check\_ vowel(char)
+ 	\item int check-vowel(char)
  	Функция проверяет на ошибку следующую после шипящей букву, и возвращает соответствующее значение.
 \end{itemize}
 	
@@ -562,13 +609,13 @@ matrix.c
 
 При выполнении задания я отработал навыки работы с файлами и научился пользоваться функциями для работы со строками.
 \subsection*{Листинги}
-check\_ sizzling.c
+check-sizzling.c
 \lstinputlisting[]
 {../subdirprojectt/lib/check_sizzling.c}
 
 \vspace{\baselineskip}
 
-ui\_ check\_ sizzling.c
+ui-check-sizzling.c
 \lstinputlisting[]
 {../subdirprojectt/app/ui_checking_sizzling.c}
 
@@ -595,7 +642,7 @@ ui\_ check\_ sizzling.c
     Числитель и знаменатель рационального числа.
 \end{itemize}
 	
-	В классе определен конструктор 
+	В классе определен конструктор
 \begin{itemize}
 
 	\item LimitedStorage(int num1 = 2, int num2 = 7)
@@ -670,6 +717,8 @@ ui\_ check\_ sizzling.c
 \vspace{\baselineskip}
 
 
+В ходе автоматического тестирования вызывалась функция splitArray, которой подавался массив с целыми числами. Затем полученные в матрице данные сравнивались с ожидаемым результатом. 
+
 
 \subsection{Выводы}
 
@@ -691,70 +740,73 @@ rationalnum.cpp
 
 
 \begin{enumerate}
-	\item Класс translation, перевод радиан.
+	\item Класс QuadEquation, квадратное уравнение.
 	
-	translation.h
-	\lstinputlisting[]
-	{../subdirprojectt/cpp-lib/translation.h}
-	
-	\vspace{\baselineskip}
-	
-	translation.cpp
-	\lstinputlisting[]
-	{../subdirprojectt/cpp-lib/translation.cpp}
-	
-	\item Класс tell\_ me\_ age манипуляции с возрастом.
-	
-	tell\_ me\_ age.h
-	\lstinputlisting[]
-	{../subdirprojectt/cpp-lib/tell_me_age.h}
+	QuadEquationClass.h
+%	\lstinputlisting[]
+%	{../sources/subdirproject/cpplib/QuadEquationClass.h}
 	
 	\vspace{\baselineskip}
 	
-	tell\_ me\_ age.cpp
-	\lstinputlisting[]
-	{../subdirprojectt/cpp-lib/tell_me_age.cpp}
+	QuadEquationClass.cpp
+%	\lstinputlisting[]
+%	{../sources/subdirproject/cpplib/QuadEquationClass.cpp}
 	
-	\item Класс conversation дублирование четных цифр
+	\item Класс Date для работы с датой и временем.
 	
-	conversation.h
-	\lstinputlisting[]
-	{../subdirprojectt/cpp-lib/conversation.h}
+	date.h
+%	\lstinputlisting[]
+%	{../sources/subdirproject/cpplib/date.h}
 	
 	\vspace{\baselineskip}
 	
-	conversation.cpp
-	\lstinputlisting[]
-	{../subdirprojectt/cpp-lib/conversation.cpp}
+	date.cpp
+%	\lstinputlisting[]
+%	{../sources/subdirproject/cpplib/date.cpp}
 	
-	\item Класс Massive\_ without\_ nulls для удаления из массива нулей.
+	\item Класс Factorizator для разложения числа на простые множители.
 	
-	massive\_ without\_ nulls.h
-	\lstinputlisting[]
-	{../subdirprojectt/cpp-lib/massive_without_nulls.h}
+	Factorizator.h
+%	\lstinputlisting[]
+%	{../sources/subdirproject/cpplib/Factorizator.h}
 	
-	matrix\_ without\_ nulls.сpp
-	\lstinputlisting[]
-	{../subdirprojectt/cpp-lib/matrix_without_nulls.cpp}	
+	\vspace{\baselineskip}
 	
-	\item 	Класс check\_ sizzling для удаления шипящих.
+	Factorizator.cpp
+%	\lstinputlisting[]
+%	{../sources/subdirproject/cpplib/Factorizator.cpp}
+	
+	\item Класс ArraySplitter для разбиения массива.
+	
+%	arraysplitter.h
+%	\lstinputlisting[]
+%	{../sources/subdirproject/cpplib/arraysplitter.h}
+	
+%	arraysplitter.сpp
+%	\lstinputlisting[]
+%	{../sources/subdirproject/cpplib/arraysplitter.cpp}	
+	
+	\item Класс Drug, медикамент.
 		
-	check\_ sizzling.h
-	\lstinputlisting[]
-	{../subdirprojectt/cpp-lib/check_sizzling.h}
+%	drug.h
+%	\lstinputlisting[]
+%	{../sources/subdirproject/cpplib/drug.h}
 	
-	check\_ sizzling.сpp
-	\lstinputlisting[]
-	{../subdirprojectt/cpp-lib/check_sizzling.cpp}	
+%	drug.сpp
+%	\lstinputlisting[]
+%	{../sources/subdirproject/cpplib/drug.cpp}	
 	
 \end{enumerate}
 
-
+\section{Классы исключений}
+%		exceptions.h
+%		\lstinputlisting[]
+%		{../sources/subdirproject/cpplib/exceptions.h}
 \section{Автоматические тесты}
 
-	\lstinputlisting[]{../subdirprojectt/cpptest/tst_cpptesttest.cpp}
+%	\lstinputlisting[]{../sources/subdirproject/cpptest/tst_cpptesttest.cpp}
 	
 	
-	\lstinputlisting[]{../subdirprojectt/test/tst_ilintest.cpp}
+%	\lstinputlisting[]{../sources/subdirproject/test3/tst_test3test.cpp}
 
 \end{document}

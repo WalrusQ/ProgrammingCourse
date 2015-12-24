@@ -14,13 +14,15 @@ SOURCES += \
     translation.cpp \
     tell_me_age.cpp \
     conversation.cpp \
-    matrix_without_nulls.cpp
+    matrix_without_nulls.cpp \
+    check_sizzling.cpp
 
 HEADERS += \
     translation.h \
     tell_me_age.h \
     conversation.h \
-    matrix_without_nulls.h
+    check_sizzling.h \
+    massive_without_nulls.h
 unix {
     target.path = /usr/lib
     INSTALLS += target
