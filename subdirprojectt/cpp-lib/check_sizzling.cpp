@@ -1,7 +1,7 @@
 #include "check_sizzling.h"
 
 
-std::string check_sizzling::find_symbol(string text)
+std::string check_sizzling::find_symbol_and_change_if_need(string text) const
 {
     int i;
     for(i=0; i<20; i++)
@@ -22,7 +22,7 @@ std::string check_sizzling::find_symbol(string text)
     return text;
 }
 
-int check_sizzling::check_symbol(char vowel)
+int check_sizzling::check_symbol(char vowel) const
 {
     if(vowel == 'e') return 0;
     if(vowel == 'i') return 1;

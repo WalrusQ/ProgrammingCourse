@@ -1,41 +1,52 @@
 #include "rationalnum.h"
 
 
-RationalNum::RationalNum(int num1, int num2)/// Список инициализации
-{
-    numerator = num1;
-    denominator = num2;
-}
+RationalNum::RationalNum(int numerator, int denominator): numerator(numerator), denominator(denominator){}
+
 void RationalNum::Copy(RationalNum numb){
     numerator = numb.numerator;
     denominator = numb.denominator;
 }
-void RationalNum::sum(int num){
+void RationalNum::Sum(int num){
     numerator += num*denominator;
 
 }
-void RationalNum::Multi(int Num){
-    numerator *= Num;
+void RationalNum::Multi(int num){
+    numerator *= num;
 
 }
-void RationalNum::divide(int Num){
-    if (Num == 0){
+void RationalNum::Divide(int num){
+    if (num == 0){
         DevNull error;
         throw error;
     }
-    denominator *= Num;}
+    denominator *= num;}
 
-RationalNum RationalNum::operator/(int Num){
-    if (Num == 0){
+RationalNum RationalNum::operator/(int num){
+    if (num == 0){
         DevNull error;
         throw error;
     }
     RationalNum n;
-    n.denominator /= Num;
+    n.denominator *= num;
     return n;
 }
 
 double RationalNum::ToDouble(){
     return((double)numerator / double(denominator));
+}
+
+RationalNum RationalNum::operator+(int num)
+{
+    RationalNum n;
+    n.numerator += num*n.denominator;
+    return n;
+}
+
+RationalNum RationalNum::operator*(int num)
+{
+    RationalNum n;
+    n.numerator *= num;
+    return n;
 }
 

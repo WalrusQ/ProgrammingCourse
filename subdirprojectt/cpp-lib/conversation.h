@@ -2,15 +2,12 @@
 #define CONVERSATION_H
 #include<cmath>
 
-class conversation
+class double_even_numbers
 {
 private:
-    /// поля не нужны
-    int input_num;
-    int output_num;
+
 public:
-    conversation(int num = 1234);
-    int convert();
+    int convert(const int input_num = 1234) const;
 };
 
 #endif // CONVERSATION_H

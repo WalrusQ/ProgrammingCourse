@@ -22,7 +22,7 @@ IlinTest::IlinTest()
 
 void IlinTest::test_conversation()
 {   int number = 12234;
-        QCOMPARE(conversation(number), 12222344);
+        QCOMPARE(double_even_numbers(number), 12222344);
 
 }
 void IlinTest::test_translation()
@@ -35,13 +35,6 @@ void IlinTest::test_translation()
     QCOMPARE(angle.sec, 44);
 
 }
-
-/// удалить
-//void IlinTest::test_tell_me_age()
-//{
-
-//    // QVERIFY2(true, "Failure");
-//}
 
 QTEST_APPLESS_MAIN(IlinTest)
 

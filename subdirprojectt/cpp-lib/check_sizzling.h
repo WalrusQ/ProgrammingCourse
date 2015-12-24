@@ -7,12 +7,9 @@ class check_sizzling
 {
 
 public:
-    check_sizzling();
-    /// может быть они private?
-    /// где const?
-    /// переименовать
-    string find_symbol(const string);
-    int check_symbol(char);
+    string find_symbol_and_change_if_need(const string text = "restart nimfa vywern") const;
+private:
+    int check_symbol(const char) const;
 
 };
 

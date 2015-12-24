@@ -9,15 +9,16 @@ class RationalNum
     int numerator;
     int denominator;
 public:
-    /// Параметры переименовать
-    RationalNum(int num1 = 1, int num2 = 8);
+    RationalNum(int numerator = 1, int denominator = 8);
     void Copy(RationalNum);
-    /// Перегрузить операторы
-    void sum(int);
+    void Sum(int);
     void Multi(int);
-    void divide(int);
+    void Divide(int);
     double ToDouble();
+    RationalNum operator+(int);
+    RationalNum operator*(int);
     RationalNum operator/(int);
+
 private:
 
 };

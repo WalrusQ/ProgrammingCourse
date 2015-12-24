@@ -11,21 +11,21 @@ TEMPLATE = lib
 CONFIG += staticlib
 
 SOURCES += \
-    conversation.c \
-    matrix.c \
     tell_me_age.c \
     translation.c \
     check_sizzling.c \
-    check_string.c
+    double_even_numbers.c \
+    massive_without_nulls.c
 
 HEADERS += \
     conversation.h \
     matrix.h \
     tell_me_age.h \
     translation.h \
-    check_slizzing.h \
-    check_string.h
+    check_sizzling.h
 unix {
     target.path = /usr/lib
     INSTALLS += target
 }
+
+DISTFILES +=

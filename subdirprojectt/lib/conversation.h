@@ -7,7 +7,7 @@ extern "C" {
 
 #include<math.h>
 #include <stdio.h>
-int conversation(int);
+int double_even_numbers(int);
 
 #ifdef __cplusplus
 }

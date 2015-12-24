@@ -1,10 +1,9 @@
 
-#include"check_slizzing.h"
+#include"check_sizzling.h"
 
-/// Массивчик char для замен
-void check_slizzing(char* string){
+void check_sizzling(char* string, int size){
     int i;
-    for(i=0; i<200; i++)
+    for(i=0; i<size; i++)
         if (string[i] == 'r' || string[i] == 'n'||string[i] == 'v')
             switch(check_vowel(string[i+1])){
             case 0:

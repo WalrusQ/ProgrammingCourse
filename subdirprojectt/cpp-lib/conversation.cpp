@@ -1,12 +1,7 @@
 #include "conversation.h"
 
-conversation::conversation(int num)
-{
-    input_num = num;
-}
-
-int conversation::convert()
-{   output_num = 0;
+int double_even_numbers::convert(int input_num) const
+{   int output_num = 0;
     int tmp, amount_of_numerals;
     tmp = input_num;
 

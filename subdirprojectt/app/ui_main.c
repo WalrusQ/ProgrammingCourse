@@ -24,10 +24,10 @@ void ui_main(){
         break;
 
     case 4:
-        ui_matrix();
+        ui_array_without_nulls();
         break;
     case 5:
-       ui_check_slizzing();
+       ui_check_sizzling();
 
     }
 }

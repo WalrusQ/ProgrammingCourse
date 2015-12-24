@@ -14,17 +14,17 @@ SOURCES += \
     translation.cpp \
     tell_me_age.cpp \
     conversation.cpp \
-    matrix_without_nulls.cpp \
     check_sizzling.cpp \
-    rationalnum.cpp
+    rationalnum.cpp \
+    array.cpp
 
 HEADERS += \
     translation.h \
     tell_me_age.h \
     conversation.h \
     check_sizzling.h \
-    massive_without_nulls.h \
-    rationalnum.h
+    rationalnum.h \
+    array.h
 unix {
     target.path = /usr/lib
     INSTALLS += target

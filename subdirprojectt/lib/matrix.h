@@ -4,7 +4,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-int matrix_not_zero(int *array);
+int array_not_zero(int *array, int size);
 
 #endif // MATRIX_H
 

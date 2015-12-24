@@ -1,28 +1,28 @@
-#include "ui_matrix.h"
+#include "ui_array.h"
 #include"matrix.h"
 #include<stdlib.h>
-void ui_matrix(){
-    int* array = (int*) malloc(sizeof(int)*20) ;
+void ui_array_without_nulls(){
+    int size = 20;
+    int* array = (int*) malloc(sizeof(int)*size) ;
     int i;
 
     FILE *myfile = fopen("myfile.txt", "r");
-    for(i = 0; i< 20; i++)
+    for(i = 0; i< size; i++)
         fscanf(myfile, "%d", &array[i]);
 
     fclose(myfile);
 
-    int k = matrix_not_zero(array);
+    int k = array_not_zero(array, size);
 
-    /// снова большая буква
-    FILE *Output = fopen("Output.txt", "w");
+    FILE *output = fopen("Output.txt", "w");
     int* new_array = (int*) malloc(sizeof(int)*20);
     for (i=0; i<k; i++){
 
         new_array[i] = array[i];
-        fprintf(Output,"%d ", new_array[i]);
+        fprintf(output,"%d ", new_array[i]);
 
     }
-    fclose(Output);
+    fclose(output);
     free(array);
     free(new_array);
     printf("Done.\n");
