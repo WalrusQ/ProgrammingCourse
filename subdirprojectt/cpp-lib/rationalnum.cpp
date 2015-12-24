@@ -1,16 +1,10 @@
 #include "rationalnum.h"
 
 
-RationalNum::RationalNum(const int num1, const int num2)
+RationalNum::RationalNum(int num1, int num2)
 {
     numerator = num1;
     denominator = num2;
-}
-
-RationalNum::RationalNum(RationalNum &x)
-{
-    numerator = x.numerator;
-    denominator = x.denominator;
 }
 void RationalNum::Copy(RationalNum numb){
     numerator = numb.numerator;
@@ -37,11 +31,11 @@ RationalNum RationalNum::operator/(int Num){
         throw error;
     }
     RationalNum n;
-    n.denominator *= Num;
+    n.denominator /= Num;
     return n;
 }
 
-double RationalNum::ToDouble() const{
+double RationalNum::ToDouble(){
     return((double)numerator / double(denominator));
 }
 

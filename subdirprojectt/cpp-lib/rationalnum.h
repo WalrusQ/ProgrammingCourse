@@ -9,13 +9,12 @@ class RationalNum
     int numerator;
     int denominator;
 public:
-    RationalNum(const int num1 = 1, const int num2 = 8);
-    RationalNum(RationalNum & x);
+    RationalNum(int num1 = 1, int num2 = 8);
     void Copy(RationalNum);
     void sum(int);
     void Multi(int);
     void divide(int);
-    double ToDouble() const;
+    double ToDouble();
     RationalNum operator/(int);
 private:
 

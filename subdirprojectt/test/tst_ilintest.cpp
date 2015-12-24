@@ -3,6 +3,7 @@
 #include "conversation.h"
 #include "translation.h"
 
+
 class IlinTest : public QObject
 {
     Q_OBJECT

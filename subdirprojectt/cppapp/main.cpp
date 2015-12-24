@@ -15,7 +15,7 @@ int main()
      cout << Numb.ToDouble() << endl;
     }
     catch(DevNull){
-        cout << "Fuck";
+        cout << "devnull";
     }
 
 

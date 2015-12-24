@@ -3,30 +3,36 @@
 #include "check_sizzling.h"
 #include"conversation.h"
 #include <string>
+#include "rationalnum.h"
 using std::string;
 
 class CpptestTest : public QObject
 {
     Q_OBJECT
 
-public:
-    CpptestTest();
+
+
 
 private Q_SLOTS:
-    void testCase1();
-    void test_conversation();
+       void test_conversation();
     void test_sizzling();
+    void test_inapsulation();
 };
 
-CpptestTest::CpptestTest()
-{
+
+
+void CpptestTest::test_inapsulation(){
+    RationalNum Num;
+    RationalNum Numb;
+    Num.Multi(2);
+    Num.sum(1);
+    Num.divide(5);
+    Numb.Copy(Num);
+    QCOMPARE(Num.ToDouble(), 0.25 );
+    QCOMPARE(Num.ToDouble(), Numb.ToDouble() );
+
 }
 
-void CpptestTest::testCase1()
-{
-    QVERIFY2(true, "Failure");
-
-}
 void CpptestTest::test_conversation(){
     conversation num;
     QCOMPARE(num.convert(), 122344);
