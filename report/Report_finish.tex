@@ -1,0 +1,619 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[OT1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{cmap}					% поиск в PDF
+\usepackage{mathtext} 				% русские буквы в формулах
+%\usepackage{tikz-uml}               % uml диаграммы
+
+% TODOs
+\usepackage[%
+  colorinlistoftodos,
+  shadow
+]{todonotes}
+
+% Генератор текста
+\usepackage{blindtext}%quadEquation.c
+%\lstinputlisting[]
+%{../subdirproject/lib/quadEquation.c}
+
+%\vspace{\baselineskip}
+
+%quadEquationUI.c
+%\lstinputlisting[]
+%{../sources/subdirproject/app/quadEquationUI.c}
+
+
+%------------------------------------------------------------------------------
+
+% Подсветка синтаксиса
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{listings}
+ 
+ % Цвета для кода
+\definecolor{string}{HTML}{B40000} % цвет строк в коде
+\definecolor{comment}{HTML}{008000} % цвет комментариев в коде
+\definecolor{keyword}{HTML}{1A00FF} % цвет ключевых слов в коде
+\definecolor{morecomment}{HTML}{8000FF} % цвет include и других элементов в коде
+\definecolor{captiontext}{HTML}{FFFFFF} % цвет текста заголовка в коде
+\definecolor{captionbk}{HTML}{999999} % цвет фона заголовка в коде
+\definecolor{bk}{HTML}{FFFFFF} % цвет фона в коде
+\definecolor{frame}{HTML}{999999} % цвет рамки в коде
+\definecolor{brackets}{HTML}{B40000} % цвет скобок в коде
+ 
+ % Настройки отображения кода
+\lstset{
+language=C, % Язык кода по умолчанию
+morekeywords={*,...}, % если хотите добавить ключевые слова, то добавляйте
+ % Цвета
+keywordstyle=\color{keyword}\ttfamily\bfseries,
+stringstyle=\color{string}\ttfamily,
+commentstyle=\color{comment}\ttfamily\itshape,
+morecomment=[l][\color{morecomment}]{\#}, 
+ % Настройки отображения     
+breaklines=true, % Перенос длинных строк
+basicstyle=\ttfamily\footnotesize, % Шрифт для отображения кода
+backgroundcolor=\color{bk}, % Цвет фона кода
+%frame=lrb,xleftmargin=\fboxsep,xrightmargin=-\fboxsep, % Рамка, подогнанная к заголовку
+frame=tblr
+rulecolor=\color{frame}, % Цвет рамки
+tabsize=3, % Размер табуляции в пробелах
+showstringspaces=false,
+ % Настройка отображения номеров строк. Если не нужно, то удалите весь блок
+numbers=left, % Слева отображаются номера строк
+stepnumber=1, % Каждую строку нумеровать
+numbersep=5pt, % Отступ от кода 
+numberstyle=\small\color{black}, % Стиль написания номеров строк
+ % Для отображения русского языка
+extendedchars=true,
+literate={Ö}{{\"O}}1
+  {Ä}{{\"A}}1
+  {Ü}{{\"U}}1
+  {ß}{{\ss}}1
+  {ü}{{\"u}}1
+  {ä}{{\"a}}1
+  {ö}{{\"o}}1
+  {~}{{\textasciitilde}}1
+  {а}{{\selectfont\char224}}1
+  {б}{{\selectfont\char225}}1
+  {в}{{\selectfont\char226}}1
+  {г}{{\selectfont\char227}}1
+  {д}{{\selectfont\char228}}1
+  {е}{{\selectfont\char229}}1
+  {ё}{{\"e}}1
+  {ж}{{\selectfont\char230}}1
+  {з}{{\selectfont\char231}}1
+  {и}{{\selectfont\char232}}1
+  {й}{{\selectfont\char233}}1
+  {к}{{\selectfont\char234}}1
+  {л}{{\selectfont\char235}}1
+  {м}{{\selectfont\char236}}1
+  {н}{{\selectfont\char237}}1
+  {о}{{\selectfont\char238}}1
+  {п}{{\selectfont\char239}}1
+  {р}{{\selectfont\char240}}1
+  {с}{{\selectfont\char241}}1
+  {т}{{\selectfont\char242}}1
+  {у}{{\selectfont\char243}}1
+  {ф}{{\selectfont\char244}}1
+  {х}{{\selectfont\char245}}1
+  {ц}{{\selectfont\char246}}1
+  {ч}{{\selectfont\char247}}1
+  {ш}{{\selectfont\char248}}1
+  {щ}{{\selectfont\char249}}1
+  {ъ}{{\selectfont\char250}}1
+  {ы}{{\selectfont\char251}}1
+  {ь}{{\selectfont\char252}}1
+  {э}{{\selectfont\char253}}1
+  {ю}{{\selectfont\char254}}1
+  {я}{{\selectfont\char255}}1
+  {А}{{\selectfont\char192}}1
+  {Б}{{\selectfont\char193}}1
+  {В}{{\selectfont\char194}}1
+  {Г}{{\selectfont\char195}}1
+  {Д}{{\selectfont\char196}}1
+  {Е}{{\selectfont\char197}}1
+  {Ё}{{\"E}}1
+  {Ж}{{\selectfont\char198}}1
+  {З}{{\selectfont\char199}}1
+  {И}{{\selectfont\char200}}1
+  {Й}{{\selectfont\char201}}1
+  {К}{{\selectfont\char202}}1
+  {Л}{{\selectfont\char203}}1
+  {М}{{\selectfont\char204}}1
+  {Н}{{\selectfont\char205}}1
+  {О}{{\selectfont\char206}}1
+  {П}{{\selectfont\char207}}1
+  {Р}{{\selectfont\char208}}1
+  {С}{{\selectfont\char209}}1
+  {Т}{{\selectfont\char210}}1
+  {У}{{\selectfont\char211}}1
+  {Ф}{{\selectfont\char212}}1
+  {Х}{{\selectfont\char213}}1
+  {Ц}{{\selectfont\char214}}1
+  {Ч}{{\selectfont\char215}}1
+  {Ш}{{\selectfont\char216}}1
+  {Щ}{{\selectfont\char217}}1
+  {Ъ}{{\selectfont\char218}}1
+  {Ы}{{\selectfont\char219}}1
+  {Ь}{{\selectfont\char220}}1
+  {Э}{{\selectfont\char221}}1
+  {Ю}{{\selectfont\char222}}1
+  {Я}{{\selectfont\char223}}1
+  {і}{{\selectfont\char105}}1
+  {ї}{{\selectfont\char168}}1
+  {є}{{\selectfont\char185}}1
+  {ґ}{{\selectfont\char160}}1
+  {І}{{\selectfont\char73}}1
+  {Ї}{{\selectfont\char136}}1
+  {Є}{{\selectfont\char153}}1
+  {Ґ}{{\selectfont\char128}}1
+  {\{}{{{\color{brackets}\{}}}1 % Цвет скобок {
+  {\}}{{{\color{brackets}\}}}}1 % Цвет скобок }
+}
+ 
+ % Для настройки заголовка кода
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{сaptiontext}}
+\DeclareCaptionFormat{listing}{\parbox{\linewidth}{\colorbox{сaptionbk}{\parbox{\linewidth}{#1#2#3}}\vskip-4pt}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\renewcommand{\lstlistingname}{Код} % Переименование Listings в нужное именование структуры
+
+
+%------------------------------------------------------------------------------
+\author{А.~А.~Ильин}
+\title{Программирование}
+\begin{document}
+\maketitle
+\chapter{Основные конструкции языка}
+%############################################################
+\section{Задание 1}
+\subsection{Задание}
+
+Пользователь задает угол в градусах, минутах и секундах. Вывести значение того же угла в радианах.
+
+\subsection{Теоретические сведения}
+
+Радиан - радианная мера угла. Радиан свазан с градусами следующим соответствием:
+
+\begin{displaymath}1 radian = 180 / \pi degrees \end{displaymath}
+\
+Градусы в свою очередь делятся на секунды и минуты:
+ \begin{math}1 degree = 60 min \end{math} 
+ \begin{math}1 min = 60 sec \end{math} 
+
+Для реализации данного алгоритма были использованы функции стандартной библиотеки, прототипы которых находятся в файле stdio.h для ввода и вывода информации и math.h для выполнения необходимых вычислений.
+
+
+\subsection{Проектирование}
+Для более удобного хранения данных, а так же их передачи была использована структура Angle. Она содержит 3 поля, которые должны содержать целые числа, соответсвующие градусам, минутам и секундам.
+
+В ходе проектирования было решено выделить одну функцию:
+
+	\begin{itemize}
+	
+
+		\item void translation(double, Angle*)
+		
+		 Функция вычисляет переводит из радиан в градусы.
+		 Параметрами функциия являются переменная типа double и указатель на созданную структуру. Первое значение соответствует числу радиан, переданному пользователем, а в структуру на которую получен указетль будет записаны градусы, минуты и секунды. 
+		 				
+	\end{itemize}
+
+\subsection{Описание тестового стенда и методики тестирования}
+Среда разработки QtCreator 3.5.0, компилятор gcc (Debian 4.9.2-10) 4.9.2, операционная система Linux version 3.16.0-4-586.
+
+Для тестирования работы программы были выполнены статический анализ, также было проведено автоматической тестирование.
+
+\subsection{Тестовый план и результаты тестирования}
+		Для статического анализа использовалась утилита Cppcheck.
+		
+		\vspace{\baselineskip}
+		 Cppcheck выдал незначительные предупреждения.
+		
+		\vspace{\baselineskip}
+		При автоматическом тестировании вызывалась функция, затем полученные значения сравнивались с ожидаемыми значениями. Результаты тестирования представлены в листингах.
+		
+		\vspace{\baselineskip}
+	 
+
+ 
+\subsection{Выводы}
+
+При выполнении задания я научился работать со структурами, отработал свои навыки в работе с основными конструкциями языка и получил опыт в организации функций одной программы.
+
+\subsection*{Листинги}
+
+translation.c
+\lstinputlisting[]
+{../subdirprojectt/lib/translation.c}
+
+\vspace{\baselineskip}
+
+quadEquationUI.c
+\lstinputlisting[]
+{../subdirprojectt/app/ui_translation.c}
+
+
+\section{Задание 2}
+\subsection{Задание}
+
+Мой возраст. Для заданного $N$ рассматриваемого как возраст человека, вывести фразу вида: «Мне 21 год», «Мне 32 года», «Мне 12 лет». 
+
+\subsection{Теоритические сведения}
+
+В ходе выполения задания для произведения необходимых вычислений и преобразований использовались перечисляемый тип и деление с остатком "\%". Также использовалась конструкция if...else. Кроме того, были применены функции стандартной библотеки из заголовочного файла stdio.h для ввода и вывода информации.
+
+\subsection{Проектирование}
+
+
+В ходе проектирования были выделены следущая функция:
+
+\begin{itemize}
+
+	\item int tell\_ me\_ age(int)
+
+	Функция проверяет число на несколько условий и возвращает один из идентефикаторов. Перечилсяемый тип был использован для систематизации вывода информации.
+	
+\end{itemize}
+
+
+\subsection{Описание тестового стенда и методики тестирования}
+Среда разработки QtCreator 3.5.0, компилятор gcc (Debian 4.9.2-10) 4.9.2, операционная система Linux version 3.16.0-4-586.
+
+Для тестирования работы программы был выполнены статический анализ.
+
+\subsection{Тестовый план и результаты тестирования}
+
+		Для статического анализа использовалась утилита Cppcheck.
+		
+		\vspace{\baselineskip}
+		
+ Cppcheck выдал незначительные предупреждения.		
+\subsection{Выводы}
+
+При выполнении задания я получил опыт в организации функций одной программы.
+
+\subsection*{Листинги}
+tell\_ me\_ age.c
+\lstinputlisting[]
+{../subdirprojectt/lib/tell_me_age.c}
+
+\vspace{\baselineskip}
+
+ui\_ tell\_ me\_ age.c
+\lstinputlisting[]
+{../subdirprojectt/app/ui_tell_me_age.c}
+
+
+\chapter{Циклы}
+\section{Задание 1}
+\subsection{Задание}
+
+Найти число, полученное из данного дублированием четных цифр.
+
+\subsection{Теоритические сведения}
+
+В ходе выполения задания для произведения необходимых вычислений и преобразований использовались операции деление "\textbackslash" и деление с остатком "\%". Также использовались циклы for, while и конструкция if...else. Кроме того, были применены функции стандартной библотеки из заголовочного файла stdio.h для ввода и вывода информации, math.h для выполнения вычислений.
+
+
+\subsection{Проектирование}
+
+В ходе проектирования были выделены следущая функция:
+
+\begin{itemize}
+	\item int double\_ even\_ numbers(int)
+
+	Функция ищет число цифр в числе, проверяет цифру на четность и в случае истинности дублирует ее.
+\end{itemize}
+
+
+\subsection{Описание тестового стенда и методики тестирования}
+
+Среда разработки QtCreator 3.5.0, компилятор gcc (Debian 4.9.2-10) 4.9.2, операционная система Linux version 3.16.0-4-586.
+
+Для тестирования работы программы были выполнены статический анализ, также было проведено автоматической тестирование.
+
+\subsection{Тестовый план и результаты тестирования}
+
+	Для статического анализа использовалась утилита Cppcheck.
+	
+	\vspace{\baselineskip}
+	 Cppcheck выдал незначительные предупреждения.
+	
+	
+
+	\vspace{\baselineskip}
+	
+	В ходе автоматического тестирования  вызывалась функция double\_ even\_ numbers. Результаты тестирования предоставлены в листингах.
+	 \vspace{\baselineskip}
+ 
+
+\subsection{Выводы}
+В ходе выполнения я отработал навыки работы с циклами.
+\subsection*{Листинги}
+double\_ even\_ numbers.c
+\lstinputlisting[]
+{../subdirprojectt/lib/double_even_numbers.c}
+
+\vspace{\baselineskip}
+
+ui\_ double\_ even\_ numbers.c
+\lstinputlisting[]
+{../subdirprojectt/app/ui_double_even_numbers.c}
+
+\chapter{Массивы}
+\section{Задание 1}
+\subsection{Задание}
+
+Удалить из массива $A(n)$ нулевые элементы, передвинув на их место следующие элементы без нарушения порядка их следования. В результате должен получиться массив меньшего размера, не содержащий нулей.
+
+\subsection{Теоритические сведения}
+
+Для выполнения задания использовался цикл for, конструкция if...else, а также функции стандартной библиотеки из заголовочного файла stdlib.h для динамического выделения и освобождения памяти, stdio.h для ввода, вывода информации и работы с файлами и math.h для выполнения вычислений.
+
+\subsection{Проектирование}
+
+Ввод и вывод данных реализован с помощью файлов. Входной файл должен содержать некоторое количество целых чисел, записанных через пробел. Выходные файлы создаются по ходу программы и также содержат целые числа, записанные через пробел.
+ 
+В ходе проектирования были выделены следующие функции:
+
+\begin{itemize}
+ 	
+ 	\item int array\_ not\_ zero(int*, int)
+ 	Функция получает массив целых чисел, считанный из файла, а так же его размер. Затем по циклу ищет нули и удаляет их с массива, затем возвращает индекс последнего элемента массива для последующего вывода.
+ 	
+\end{itemize}
+	
+\subsection{Описание тестового стенда и методики тестирования}
+Среда разработки QtCreator 3.5.0, компилятор gcc (Debian 4.9.2-10) 4.9.2, операционная система Linux version 3.16.0-4-586.
+
+Для тестирования работы программы были выполнены статический анализ, также было проведено автоматической тестирование.
+\subsection{Тестовый план и результаты тестирования}
+
+Для статического анализа использовалась утилита Cppcheck.
+
+\vspace{\baselineskip}
+Cppcheck выдал незначительные предупреждения.
+
+\subsection{Выводы}
+
+При выполнении задания я понял принцип организации программы при работе с выделением динамической памяти, научился работать с файлами.
+
+\subsection*{Листинги}
+
+array\_ without\_ nulls.c
+\lstinputlisting[]
+{../subdirprojectt/lib/array_without_nulls.c}
+
+\vspace{\baselineskip}
+
+ui\_ array\_ without\_ nulls.c
+
+\lstinputlisting[]
+{../subdirprojectt/app/ui_array_without_nulls.c}
+
+\chapter{Строки}
+\section{Задание 1}
+\subsection{Задание}
+
+В русском языке, как правило, после букв Ж, Ч, Ш, Щ пишется И, А, У, а не Ы, Я, Ю. Проверить заданный текст на соблюдение этого правила и исправить ошибки.
+
+
+\subsection{Теоритические сведения}
+
+Для выполнения задания использовался цикл for, конструкция if...else, а также функции стандартной библиотеки из заголовочного файла stdlib.h для динамического выделения и освобождения памяти, stdio.h для ввода, вывода информации и работы с файлами и string.h для работы со строками. 
+
+\subsection{Проектирование}
+
+В ходе проектирования были выделены следующие функции:
+
+\begin{itemize}
+	 \item void check\_ sizzling(char*, int)
+ 	Функция получает строку и ее размер, затем в строке выполняется поиск шипящей согласной и перенаправление на проверку последующей буквы, и при необходимости ее изменение.
+ 	
+ 	\item int check\_ vowel(char)
+ 	Функция проверяет на ошибку следующую после шипящей букву, и возвращает соответствующее значение.
+\end{itemize}
+	
+	
+\subsection{Описание тестового стенда и методики тестирования}
+Среда разработки QtCreator 3.5.0, компилятор gcc (Debian 4.9.2-10) 4.9.2, операционная система Linux version 3.16.0-4-586.
+
+Для тестирования работы программы были выполнены статический анализ, также было проведено автоматической тестирование.
+\subsection{Тестовый план и результаты тестирования}
+
+Для статического анализа использовалась утилита Cppcheck.
+
+\vspace{\baselineskip}
+ Cppcheck не выдал ошибок.
+
+\vspace{\baselineskip}
+
+\subsection{Выводы}
+
+При выполнении задания я отработал навыки работы с файлами и научился пользоваться функциями для работы со строками.
+\subsection*{Листинги}
+check\_ sizzling.c
+\lstinputlisting[]
+{../subdirprojectt/lib/check_sizzling.c}
+
+\vspace{\baselineskip}
+
+ui\_ check\_ sizzling.c
+\lstinputlisting[]
+{../subdirprojectt/app/ui_checking_sizzling.c}
+
+
+\chapter{Инкапсуляция}
+\section{Задание 1}
+\subsection{Задание}
+
+Реализовать класс РАЦИОНАЛЬНОЕ ЧИСЛО (представимое в виде m/n). Требуемые методы: конструктор, деструктор, копирование, сложение, вычитание, умножение, деление, преобразование к типу double.
+
+\subsection{Теоритические сведения}
+
+Для выполнения задания использовался цикл for, конструкция if...else, а также класс exception стнадартной бибилиотеки.
+
+\subsection{Проектирование}
+
+
+В ходе проектирования программы было решено создать класс, который называется RationalNum.
+Созданный класс содержит 2 поля с модификатором доступа private:
+
+\begin{itemize}
+	\item  int numerator;
+    \item  int denominator;
+    Числитель и знаменатель рационального числа.
+\end{itemize}
+	
+	В классе определен конструктор 
+\begin{itemize}
+
+	\item RarionalNum(int numerator = 1, int denominator = 8)
+	
+	Конструктор со значениями по умолчанию для числа. 
+	
+			
+\end{itemize}	
+В классе определены 5 методов с модификатором доступа public:		
+
+\begin{enumerate}	
+	\item void Copy(RationalNum);
+	
+	Метод, аналогичный конструктору копирования.
+	
+	\item void Sum(int);
+	
+	Метод обеспечивает сложение. 
+	
+	\item void Multi(int);
+	
+	Метод обеспечивает умножение.
+	
+	\item void Divide(int);
+	
+	Метод обеспечивает деление.
+	
+	\item double ToDouble();
+	
+	Метод преобразует рациональное число к типу double. Возвращает соответственно это число.
+	
+	Так же перегружены операторы сложения, умножения и деления.
+
+\end{enumerate}
+	Так же был создаы класса исключений:
+	
+		\begin{itemize}
+		\item DevNull
+		Исключение вызывается, когда совершается попытка деления на ноль.
+		\end{itemize}
+		
+		
+\subsection{Описание тестового стенда и методики тестирования}
+Среда разработки QtCreator 3.5.0, компилятор gcc (Debian 4.9.2-10) 4.9.2, операционная система Linux version 3.16.0-4-586.
+
+Для тестирования работы программы были выполнены статический анализ, также было проведено автоматической тестирование.
+
+\subsection{Тестовый план и результаты тестирования}
+
+Для статического анализа использовалась утилита Cppcheck.
+
+\vspace{\baselineskip}
+Cppcheck ошибок не обнаружил.
+\vspace{\baselineskip}
+
+Результаты автоматического тестирования представлены в листингах.
+
+\subsection{Выводы}
+
+При выполнении задания я понял принцип инкапсуляции и организации полей и методов класса.
+
+\subsection*{Листинги}
+rationalnum.h
+\lstinputlisting[]
+{../subdirprojectt/cpp-lib/rationalnum.h}
+
+\vspace{\baselineskip}
+
+rationalnum.cpp
+\lstinputlisting[]
+{../subdirprojectt/cpp-lib/rationalnum.cpp}
+
+\chapter {Приложение}
+\section{Классы для реализации заданий 1-5}
+
+
+\begin{enumerate}
+	\item Класс translation, перевод радиан.
+	
+	translation.h
+	\lstinputlisting[]
+	{../subdirprojectt/cpp-lib/translation.h}
+	
+	\vspace{\baselineskip}
+	
+	translation.cpp
+	\lstinputlisting[]
+	{../subdirprojectt/cpp-lib/translation.cpp}
+	
+	\item Класс tell\_ me\_ age манипуляции с возрастом.
+	
+	tell\_ me\_ age.h
+	\lstinputlisting[]
+	{../subdirprojectt/cpp-lib/tell_me_age.h}
+	
+	\vspace{\baselineskip}
+	
+	tell\_ me\_ age.cpp
+	\lstinputlisting[]
+	{../subdirprojectt/cpp-lib/tell_me_age.cpp}
+	
+	\item Класс double\_ even\_ numbers дублирование четных цифр
+	
+	double\_ even\_ numbers.h
+	\lstinputlisting[]
+	{../subdirprojectt/cpp-lib/double_even_numbers.h}
+	
+	\vspace{\baselineskip}
+	
+	double\_ even\_ numbers.cpp
+	\lstinputlisting[]
+	{../subdirprojectt/cpp-lib/double_even_numbers.cpp}
+	
+	\item Класс array для инициализации массива и удаления из него нулей.
+	
+	array.h
+	\lstinputlisting[]
+	{../subdirprojectt/cpp-lib/array.h}
+	
+	array.сpp
+	\lstinputlisting[]
+	{../subdirprojectt/cpp-lib/array.cpp}	
+	
+	\item 	Класс check\_ sizzling для удаления шипящих.
+		
+	check\_ sizzling.h
+	\lstinputlisting[]
+	{../subdirprojectt/cpp-lib/check_sizzling.h}
+	
+	check\_ sizzling.сpp
+	\lstinputlisting[]
+	{../subdirprojectt/cpp-lib/check_sizzling.cpp}	
+	
+\end{enumerate}
+
+
+\section{Автоматические тесты}
+
+	\lstinputlisting[]{../subdirprojectt/cpptest/tst_cpptesttest.cpp}
+	
+	
+	\lstinputlisting[]{../subdirprojectt/test/tst_ilintest.cpp}
+
+\end{document}
