@@ -70,24 +70,3 @@ void Array::delete_nulls(Array & array)
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-///// Переименовать
-//void massive_without_nulls::converting_matrix()
-//{
-
-//}
-
-//massive_without_nulls::~massive_without_nulls()
-//{
-//    delete [] array;
-//}

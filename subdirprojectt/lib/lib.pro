@@ -15,14 +15,14 @@ SOURCES += \
     translation.c \
     check_sizzling.c \
     double_even_numbers.c \
-    massive_without_nulls.c
+    array_without_nulls.c
 
 HEADERS += \
-    conversation.h \
-    matrix.h \
     tell_me_age.h \
     translation.h \
-    check_sizzling.h
+    check_sizzling.h \
+    array_without_nulls.h \
+    double_even_numbers.h
 unix {
     target.path = /usr/lib
     INSTALLS += target

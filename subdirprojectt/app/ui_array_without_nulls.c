@@ -1,5 +1,5 @@
 #include "ui_array.h"
-#include"matrix.h"
+#include"array_without_nulls.h"
 #include<stdlib.h>
 void ui_array_without_nulls(){
     int size = 20;

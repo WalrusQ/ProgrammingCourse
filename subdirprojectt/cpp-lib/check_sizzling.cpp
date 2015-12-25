@@ -29,4 +29,3 @@ int check_sizzling::check_symbol(char vowel) const
     if(vowel == 'y') return 2;
     return 3;
 }
-

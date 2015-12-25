@@ -1,4 +1,4 @@
-#include"matrix.h"
+#include"array_without_nulls.h"
 
 int array_not_zero(int* array, int size){
     int k, i;

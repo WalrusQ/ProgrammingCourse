@@ -11,9 +11,11 @@ private:
     int degree;
     
 public:
-    Translation(double rad = 0.5);
+    Translation(const double rad = 0.5);
     void convert();
-    /// Где методы доступа к полям
+    int getSec(Translation &) const;
+    int getMin(Translation &) const;
+    int getDegree(Translation &) const;
 };
 
 #endif // TRANSLATION_H
